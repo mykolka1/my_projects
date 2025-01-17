@@ -1,0 +1,146 @@
+html, 
+body {
+    height: 100%;
+    background-color: #05c8eb9d;
+    font-family: sans-serif;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-container {
+    background-color: #0416dd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 60%;
+    border-radius: 32px;
+}
+.todo-container h1 {
+    font-size: 54px;
+    padding-top: 20px;
+}
+
+.input-container {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.input-container input {
+    margin: 0;
+    padding: 0 0 0 5px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    outline: none;
+    height: 50px;
+    font-size: 20px;
+    width: 60%;
+}
+
+.input-container button {
+    border: none;
+    outline: none;
+    height: 50px;
+    background-color: #ff6600;
+    color: #fff;
+    font-size: 20px;
+    padding: 0 12px;
+    border-radius: 8px;
+}
+
+.todo-list {
+    width: 60%;
+    margin: 0;
+    padding: 0;
+}
+.todo-list__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.todo-list__button {
+    all: unset; /* Скидає всі стилі до базових */
+    appearance: none; /* Видаляє стандартний вигляд чекбокса */
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    border: none;
+    position: relative;
+}
+.todo-list__button:checked {
+    background-color: #b6b6b6;
+}
+.todo-list__button:checked::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    width: 5px;
+    height: 10px;
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+.delete-btn {
+    background-color: #4adb1e;
+    color: #fff;
+    border: 0;
+    padding: 4px 8px;
+    position: absolute;
+    right: 35px;
+
+}
+
+@media (max-width: 1200px ){
+    .input-container {
+        width: 80%;
+    }
+    .input-container input {
+        width: 80%;
+    }
+    .todo-list {
+        width: 80%;
+    }
+}
+@media (max-width: 992px ){
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        align-items: center;
+    }
+    .todo-container {
+        height: 80%;
+    }
+    .input-container input {
+        width: 100%;
+    }
+    .input-container button {
+        width: 25%;    
+    }
+}
+@media (max-width: 767px ){
+    .todo-container {
+        width: 95%;
+        height: 90%;
+    }
+    .input-container button {
+        width: 40%;
+    }
+}
